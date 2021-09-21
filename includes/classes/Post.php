@@ -53,7 +53,7 @@ class Post {
 			//Insert notification
 			if($user_to != 'none') {
 				$notification = new Notification($this->con, $added_by);
-				$notification->insertNotification($returned_id, $user_to, "like");
+				$notification->insertNotification($returned_id, $user_to, "profile_post");
 			}
 
 			//Update post count for user 
