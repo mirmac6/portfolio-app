@@ -197,9 +197,11 @@ class Post {
 					}
 
 					if($userLoggedIn == $added_by)
-						$delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
-					else 
-						$delete_button = "";
+                    $delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
+                else if($userLoggedIn == $row['user_to']) // dodato da se u newsfeed moze izbrisati post koji ti neko postavi na zid
+                    $delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
+                else
+                    $delete_button = "";
 
 
 					$user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
@@ -411,9 +413,11 @@ class Post {
 					}
 
 					if($userLoggedIn == $added_by)
-						$delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
-					else 
-						$delete_button = "";
+                    $delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
+                else if($userLoggedIn == $row['user_to']) // dodato da se u newsfeed moze izbrisati post koji ti neko postavi na zid
+                    $delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
+                else
+                    $delete_button = "";
 
 
 					$user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
@@ -613,9 +617,9 @@ class Post {
 
 
 					if($userLoggedIn == $added_by)
-						$delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
-					else 
-						$delete_button = "";
+                    $delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
+                else
+                    $delete_button = "";
 
 
 					$user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
