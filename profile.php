@@ -109,7 +109,7 @@ if(isset($_POST['post_message'])){
                 if($userLoggedIn != $username){
                     echo "<li role='presentation'><a class='nav-link' href='#messages_div' aria-controls='messages_div' role='tab' data-toggle='tab'>Messages</a></li>";
                 } else {
-                    echo "<li role='presentation'><a class='nav-link' href='messages.php'  role='tab' data-toggle='tab'>Messages</a></li>";
+                    echo "<li role='presentation'><a href='messages.php'>Messages</a></li>";
                 }
                 ?>
                 
