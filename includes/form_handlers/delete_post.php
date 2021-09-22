@@ -19,7 +19,12 @@ include("../classes/Post.php");     //dodato zbog oduzimanja broja postova
             $added_by = $row['added_by'];
             $user_obj = new User($con, $added_by);
             $num_posts = $user_obj->getNumPosts();
-            $num_posts--;
+            if($num_posts>0){
+                $num_posts--;
+
+            }else {
+                $num_posts=0;
+            }
             $update_query = mysqli_query($con, "UPDATE users SET num_posts='$num_posts' WHERE username='$added_by'");
     
 //----------------------------------------------------------------------------------------------------------------------------------
