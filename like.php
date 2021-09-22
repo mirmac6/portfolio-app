@@ -63,7 +63,7 @@
 			$notification->insertNotification($post_id, $user_liked, "like");
 		}
 
-		header("Refresh:0"); // dodato da se odmah refresuje
+		header("Refresh:0; url=index.php"); // dodato da se odmah refresuje
 	}
 	//Unlike button
 	if(isset($_POST['unlike_button'])) {
@@ -72,7 +72,7 @@
 		$total_user_likes--;
 		$user_likes = mysqli_query($con, "UPDATE users SET num_likes='$total_user_likes' WHERE username='$user_liked'");
 		$insert_user = mysqli_query($con, "DELETE FROM likes WHERE username='$userLoggedIn' AND post_id='$post_id'");
-		header("Refresh:0"); // dodato da se odmah refresuje
+		header("Refresh:0; url=index.php"); // dodato da se odmah refresuje
 	}
 
 	//Check for previous likes
