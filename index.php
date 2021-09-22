@@ -38,7 +38,7 @@ if(isset($_POST['post'])){
 	if($uploadOk) {
 		$post = new Post($con, $userLoggedIn);
 		$post->submitPost($_POST['post_text'], 'none', $imageName);
-		header("Refresh:0");
+		header("Refresh:0"); // dodato da se menja broj postova odmah
 	}
 	else {
 		echo "<div style='text-align:center;' class='alert alert-danger'>

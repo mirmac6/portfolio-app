@@ -32,6 +32,7 @@ class Message {
 		if($body != "") {
 			$userLoggedIn = $this->user_obj->getUsername();
 			$query = mysqli_query($this->con, "INSERT INTO messages VALUES (NULL, '$user_to', '$userLoggedIn', '$body', '$date', 'no', 'no', 'no')");
+			header("Refresh:0"); // dodato da se odmah refresuje
 		}
 	}
 
