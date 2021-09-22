@@ -106,7 +106,10 @@ if(isset($_POST['post_message'])){
                 <a class="nav-link active" href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Newsfeed</a>
             </li>
             <li role="presentation">
-                <a class="nav-link" href="#messages_div" aria-controls="messages_div" role="tab" data-toggle="tab">Messages</a>
+               <?php 
+               if($userLoggedIn!=$username){
+                   echo '<a class="nav-link" href="#messages_div" aria-controls="messages_div" role="tab" data-toggle="tab">Messages</a>' ?>
+               }
             </li>
         </ul>
         
